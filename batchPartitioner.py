@@ -1,6 +1,6 @@
 import os
 #batches of 100
-nextBatch = 100
+batchSize = 100
 
 batchCounter = 0
 fileCounter = 1
@@ -8,7 +8,7 @@ batchName = ""
 thisFile = os.path.realpath(__file__)
 
 for filename in os.listdir("."):
-    if(fileCounter % nextBatch == 1):
+    if(fileCounter % batchSize == 1):
         batchCounter += 1
         batchName = "bn" + str(batchCounter)
         os.mkdir(batchName)
